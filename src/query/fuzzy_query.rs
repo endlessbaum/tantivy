@@ -110,7 +110,8 @@ impl FuzzyTermQuery {
     }
 
     fn specialized_weight(&self) -> crate::Result<AutomatonWeight<DfaWrapper>> {
-        static AUTOMATON_BUILDER: [[OnceCell<LevenshteinAutomatonBuilder>; 2]; 3] = [
+        static AUTOMATON_BUILDER: [[OnceCell<LevenshteinAutomatonBuilder>; 2]; 4] = [
+            [OnceCell::new(), OnceCell::new()],
             [OnceCell::new(), OnceCell::new()],
             [OnceCell::new(), OnceCell::new()],
             [OnceCell::new(), OnceCell::new()],
